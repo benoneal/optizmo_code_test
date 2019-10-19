@@ -1,0 +1,21 @@
+{
+  "name": "optizmo_code_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "ts-node index.ts"
+  },
+  "author": "Ben O'Neal",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^24.0.19",
+    "@types/node": "^12.11.1",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4"
+  }
+}
