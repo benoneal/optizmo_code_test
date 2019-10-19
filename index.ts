@@ -14,7 +14,7 @@ const inputState = {
 
 app({
   interface: createCLI(),
-  intervalAlerts: createIntervalAlerts(found_emails, missing_emails),
+  intervalAlerts: createIntervalAlerts(),
   inputState,
   dataStore
 }).start()

@@ -6,7 +6,7 @@ export interface IOAPI {
 }
 
 export interface Alerts {
-  start: (fn: (s: string) => void, n: number) => void,
+  start: (fn: () => void, n: number) => void,
   stop: () => void
 }
 

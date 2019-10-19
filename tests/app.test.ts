@@ -17,7 +17,7 @@ test('app', () => {
     alert_interval: 0
   }
   const alerts = {
-    start: jest.fn(),
+    start: jest.fn((fn, _) => fn()),
     stop: jest.fn()
   }
   const mockEmailList = new Set(['test@test.com'])
@@ -38,7 +38,7 @@ test('app', () => {
   expect(cli.prompt).toHaveBeenCalledWith(messages.COMMANDS)
 
   input('10')
-  expect(alerts.start).toHaveBeenCalledWith(cli.notify, 10000)
+  expect(alerts.start).toHaveBeenCalledWith(expect.any(Function), 10000)
   expect(cli.prompt).toHaveBeenCalledWith(messages.ALERT_STARTED)
 
   input('stop')
@@ -46,7 +46,7 @@ test('app', () => {
   expect(cli.prompt).toHaveBeenCalledWith(messages.ALERT_STOPPED)
 
   input('start')
-  expect(alerts.start).toHaveBeenCalledWith(cli.notify, 10000)
+  expect(alerts.start).toHaveBeenCalledWith(expect.any(Function), 10000)
   expect(cli.prompt).toHaveBeenCalledWith(messages.ALERT_STARTED)
 
   input('gibberish')

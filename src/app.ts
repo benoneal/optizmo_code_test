@@ -24,11 +24,16 @@ const app = ({
   intervalAlerts,
   dataStore
 }: AppDependencies) => {
+  const alert = () => notify(flat(
+    [...found_emails].sort().map(curriedPropAppend('true')),
+    [...missing_emails].sort().map(curriedPropAppend('false'))
+  ).join(', '))
+
   const inputHandlers = {
     help: () => prompt(messages.COMMANDS),
     start: (interval: string) => {
       alert_interval = (parseInt(interval) * 1000) || alert_interval
-      intervalAlerts.start(notify, alert_interval)
+      intervalAlerts.start(alert, alert_interval)
       prompt(messages.ALERT_STARTED)
     },
     stop: () => {
