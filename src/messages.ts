@@ -1,5 +1,5 @@
 export default {
-  WELCOME: "Welcome to my optizmo coding test.",
+  WELCOME: 'Welcome to my optizmo coding test.',
   COMMANDS: `Commands: 
 "help"        = list these commands
 "[integer]"   = set alert frequency in seconds and start alerts
