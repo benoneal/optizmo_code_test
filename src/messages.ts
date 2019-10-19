@@ -6,7 +6,6 @@ export default {
 "stop"        = stop alerts
 "start"       = resume alerts 
 "[email]"     = find email in data store
-"alert"       = force show alert
 "quit"        = exit this app`
 ,
   EMAIL_FOUND: 'found it!',
